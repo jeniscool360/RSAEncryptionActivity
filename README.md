@@ -19,6 +19,7 @@ Takeaways:
 3. Use defined inputs to ensure that an algorithm or program is producing the expected outcomes. Check boundary cases.
 4. Understand the difference between sequential, parallel, and distributed computing.
 
+## Activities
 ### 1. Raise errors in the code
 What does it mean to have a syntax error? An overflow error? A runtime error? A logic error? Explore these errors by trigging them in the code. 
 
@@ -64,5 +65,4 @@ Now change the `filename` to `"twoBigPrimes.txt"`. What is the difference in exe
 
 Do you think using distributed computing would have a major performance difference from parallel computing for a computation of this size? Why or why not?
 
-
-
+Remember Mersenne Primes from the error type portion of this exercise? Here's a video about how these primes are discovered and checked using distributed computing: https://www.youtube.com/watch?v=I7cAZndWkvA.
