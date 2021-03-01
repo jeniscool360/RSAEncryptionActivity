@@ -3,12 +3,15 @@ import multiprocessing as mp
 import time
 
 def test_smallest_coprime():
+    #good do nothing, bad give error
     assert RSA.smallest_coprime(4) == 3
     assert RSA.smallest_coprime(100) == 3
     assert RSA.smallest_coprime(2**100) == 3
 
 def test_lcm():
-    pass
+    assert RSA.lcm(8, 12) == 24
+    assert RSA.lcm(5, 12) == 60
+    assert RSA.lcm(7, 9) == 63
     # TODO write some assertions for LCM
 
 def test_encryption_boundary():
@@ -17,8 +20,8 @@ def test_encryption_boundary():
     rsa = RSA(p, q)
     # TODO demonstrate the boundary cases
     # Example assertions (replace 10 and 500 with boundary values)
-    assert 10 == rsa.c(rsa.m(10))
-    assert 500 != rsa.c(rsa.m(500))
+    assert p * q -1 == rsa.c(rsa.m(p*q-1))
+    assert p * q != rsa.c(rsa.m(p*q))
 
 def test_rsa(prm):
     p = prm[0]
@@ -64,4 +67,4 @@ if __name__ == "__main__":
     test_smallest_coprime()
     test_lcm()
     test_encryption_boundary()
-    # test_encryption_big()
+    test_encryption_big()

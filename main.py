@@ -64,9 +64,18 @@ class RSA:
 # TODO: input must be an integer and less than n
 if __name__ == "__main__":
     rsa = RSA(61, 53)
-    original = int(input(f"what would you like to encrypt? ")) 
-    encrypted = rsa.c(original)
-    decrypted = rsa.m(encrypted) 
-    print("original:", original)
-    print("encrypted:", encrypted)
-    print("decrypted:", decrypted)
+    # cool debugger that is cool (it helps not make a billion print())
+    import pdb; pdb.set_trace()
+    try:
+        original = int(input(f"what would you like to encrypt? "))
+        if original >= rsa.p * rsa.q -1:
+                    print("Must be smaller than", rsa.p * rsa.q -1)
+        else: 
+                encrypted = rsa.c(original)
+                decrypted = rsa.m(encrypted) 
+                print("original:", original)
+                print("encrypted:", encrypted)
+                print("decrypted:", decrypted)
+    #if any error happens then it does this instead
+    except:
+        print("Input must be an integer")
